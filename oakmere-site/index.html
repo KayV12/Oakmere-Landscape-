@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oakmere Landscape Studio | Garden design and landscaping</title>
+<meta name="description" content="Oakmere Landscape Studio designs and builds private gardens, terraces and courtyards. Fictional portfolio concept.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--moss:#2F3A2C;--lime:#E8E1D3;--sage:#A3AE92;--ink:#1E211D;--brass:#B5803F;--brass-d:#8F6129;--paper:#F3EFE6;
+--serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:400 1.0625rem/1.65 var(--sans);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;padding-top:env(safe-area-inset-top,0px)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.wrap{width:min(1180px,100% - 3rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.08;letter-spacing:-.012em}
+h2{font-size:clamp(2rem,4.2vw,3.25rem);max-width:18ch}
+.lede{font-family:var(--serif);font-size:1.25rem;line-height:1.5;max-width:46ch}
+section{padding:clamp(4.5rem,9vw,8rem) 0}
+.btn{display:inline-block;font:600 .95rem/1 var(--sans);padding:1rem 1.6rem;border-radius:2px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn-p{background:var(--brass);color:#1b1408}
+.btn-p:hover{background:#c78f4a}
+.btn-g{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .35s,box-shadow .35s;color:#fff}
+header.solid{background:var(--moss);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.mark{font:300 1.5rem/1 var(--serif);text-decoration:none;letter-spacing:.01em}
+.mark i{font-style:italic;color:var(--sage)}
+nav ul{display:flex;gap:2rem;list-style:none;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;position:relative;padding:.4rem 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+nav a:not(.btn):hover::after,nav a.on::after{transform:scaleX(1)}
+nav .btn{padding:.75rem 1.2rem}
+.burger{display:none;background:none;border:0;color:inherit;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:6px auto;transition:transform .3s,opacity .3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;background:var(--moss);overflow:hidden;padding:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;transform:scale(1.04);opacity:0;transition:transform 2.4s var(--ease),opacity 1.1s ease}
+.loaded .hero img{transform:scale(1);opacity:1}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,34,24,.82) 0%,rgba(26,34,24,.55) 38%,rgba(26,34,24,0) 68%),linear-gradient(0deg,rgba(26,34,24,.6),rgba(26,34,24,0) 40%)}
+.hero .wrap{position:relative;z-index:2;padding:9rem 0 clamp(3.5rem,8vh,6rem)}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.6rem);max-width:12ch;font-weight:300}
+.hero p{margin:1.5rem 0 2.2rem;font-size:1.15rem;max-width:40ch;color:#efeadd}
+.hero .row{display:flex;gap:.9rem;flex-wrap:wrap}
+.in{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.loaded .in{opacity:1;transform:none}
+.loaded .in:nth-child(2){transition-delay:.12s}.loaded .in:nth-child(3){transition-delay:.24s}
+
+/* services */
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
+.svc-head p{max-width:44ch;justify-self:end}
+.svc{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem}
+.svc div{padding:1.6rem 0;border-top:1px solid rgba(30,33,29,.25);display:grid;grid-template-columns:minmax(0,13rem) 1fr;gap:1.5rem}
+.svc h3{font-size:1.5rem;font-weight:400}
+.svc p{font-size:.98rem;color:#464b43}
+
+/* projects */
+.projects{background:var(--lime)}
+.pgrid{display:grid;grid-template-columns:1fr 1.25fr;grid-template-rows:auto auto;gap:1.5rem;margin-top:3rem}
+.proj{position:relative;overflow:hidden;background:var(--moss);color:#fff}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.proj:hover img,.proj:focus-within img{transform:scale(1.04)}
+.proj figcaption{position:absolute;inset:auto 0 0 0;padding:3rem 1.4rem 1.3rem;background:linear-gradient(0deg,rgba(20,26,18,.88),rgba(20,26,18,0));transition:padding .4s var(--ease)}
+.proj:hover figcaption{padding-bottom:1.7rem}
+.proj h3{font-size:1.6rem;font-weight:400}
+.proj p{font-size:.93rem;color:#e6e1d4;max-width:42ch}
+.p1{grid-row:1 / span 2;aspect-ratio:4/5}.p2{aspect-ratio:3/2}.p3{aspect-ratio:1/1;width:70%}
+.pgrid .p3{justify-self:end}
+.note{margin-top:1.6rem;font-size:.88rem;color:#4b5047;max-width:70ch}
+
+/* why */
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.why img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.why dl{margin-top:2.2rem;display:grid;gap:1.5rem}
+.why dt{font:400 1.35rem/1.2 var(--serif)}
+.why dd{margin-top:.3rem;color:#464b43;max-width:52ch}
+
+/* process */
+.process{background:var(--moss);color:#efeadd}
+.steps{list-style:none;padding:0;margin-top:3.5rem;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid rgba(255,255,255,.28);padding-top:1.2rem;position:relative}
+.steps li::before{content:counter(s);font:300 2.6rem/1 var(--serif);color:var(--brass)}
+.steps h3{font-size:1.35rem;font-weight:400;margin:.7rem 0 .4rem;color:#fff}
+.steps p{font-size:.95rem;color:#cfd0c2}
+
+/* cta */
+.cta{position:relative;color:#fff;text-align:center;background:var(--moss) center/cover no-repeat;background-image:var(--cta);padding:clamp(6rem,14vw,11rem) 0}
+.cta::before{content:"";position:absolute;inset:0;background:rgba(24,31,22,.52)}
+.cta .wrap{position:relative}
+.cta h2{margin-inline:auto;max-width:16ch;font-size:clamp(2.3rem,5vw,4rem)}
+.cta p{margin:1.2rem auto 2.2rem;max-width:46ch;font-size:1.1rem}
+
+/* form */
+.contact .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem)}
+.contact address{font-style:normal;margin-top:1.8rem;color:#464b43}
+form{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.2rem}
+.f{display:flex;flex-direction:column;gap:.4rem}.f.w{grid-column:1/-1}
+label{font-weight:600;font-size:.9rem}
+input,select,textarea{font:inherit;padding:.85rem .9rem;border:1px solid #9a9b8c;background:#fbf9f4;border-radius:2px;color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brass);outline-offset:1px;border-color:var(--brass)}
+.err{color:#9c2f1e;font-size:.85rem;min-height:1.1em}
+[aria-invalid=true]{border-color:#9c2f1e;background:#fdf3f0}
+.fine{font-size:.85rem;color:#53574e;grid-column:1/-1}
+.done{display:none;border:1px solid var(--sage);background:#eef0e6;padding:2rem}
+.done.show{display:block;animation:pop .5s var(--ease)}
+.done h3{font-size:1.8rem;margin-bottom:.6rem}
+.done pre{white-space:pre-wrap;font:.9rem/1.5 var(--sans);background:#fff;padding:1rem;margin:1rem 0;border:1px solid #d3d4c7}
+.done .row{display:flex;gap:.8rem;flex-wrap:wrap}
+.done .btn-g{border-color:var(--moss);color:var(--moss)}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+footer{background:#1d241b;color:#c9cabb;padding:3.5rem 0 calc(2rem + env(safe-area-inset-bottom,0px));font-size:.93rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer .mark{color:#fff;font-size:1.7rem}
+footer ul{list-style:none;padding:0;display:grid;gap:.4rem}
+footer small{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;color:#8e9082}
+
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+
+@media(max-width:900px){
+.burger{display:block}
+nav{position:fixed;inset:0;background:var(--moss);padding:calc(90px + env(safe-area-inset-top,0px)) 1.5rem 2rem;transform:translateY(-100%);visibility:hidden;transition:transform .45s var(--ease),visibility .45s}
+nav.open{transform:none;visibility:visible}
+nav ul{flex-direction:column;align-items:flex-start;gap:1.4rem}
+nav a{font:300 2rem/1.1 var(--serif)}nav .btn{font:600 1rem/1 var(--sans)}
+.burger{position:relative;z-index:60}
+.svc-head,.svc,.why .wrap,.contact .wrap,footer .wrap{grid-template-columns:1fr}
+.svc-head p{justify-self:start}
+.svc div{grid-template-columns:1fr;gap:.4rem}
+.steps{grid-template-columns:1fr 1fr}
+.pgrid{grid-template-columns:1fr}.p1{grid-row:auto}.p3{width:100%}
+.hero img{object-position:70% 50%}
+.hero::after{background:linear-gradient(0deg,rgba(26,34,24,.88) 0%,rgba(26,34,24,.55) 55%,rgba(26,34,24,.2) 100%)}
+form{grid-template-columns:1fr}
+}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.in,.rv,.hero img{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="top">
+<div class="wrap bar">
+<a class="mark" href="#top" aria-label="Oakmere Landscape Studio, home">Oak<i>mere</i></a>
+<button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="menu" aria-label="Main">
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a class="btn btn-p" href="#contact">Request an Estimate</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" aria-label="Introduction">
+<img src="images/oakmere-hero.jpg" alt="A curved limestone path and lawn at golden hour, with ornamental grasses and a stone house beyond" fetchpriority="high">
+<div class="wrap">
+<h1 class="in">We turn outdoor space into gardens worth coming home to.</h1>
+<p class="in">Oakmere designs and builds private gardens, terraces and courtyards, planned around how you live and how the light moves through the day.</p>
+<div class="row in">
+<a class="btn btn-p" href="#contact">Request an Estimate</a>
+<a class="btn btn-g" href="#projects">Explore Our Work</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<div class="svc-head">
+<h2 class="rv">Six services, one studio</h2>
+<p class="rv">From the first sketch to the last planting, the same team designs and builds your garden, so nothing is lost between drawing and ground.</p>
+</div>
+<div class="svc rv">
+<div><h3>Garden design</h3><p>Site survey, concept drawings and planting plans shaped around your home, soil and aspect.</p></div>
+<div><h3>Planting</h3><p>Layered borders and meadow schemes chosen for structure, scent and seasonal change.</p></div>
+<div><h3>Lawn renovation</h3><p>Levelling, drainage and re-seeding or turfing to bring tired lawns back to a clean, even finish.</p></div>
+<div><h3>Patios and paving</h3><p>Natural stone terraces, steps and paths, laid with precise levels and tidy joints.</p></div>
+<div><h3>Outdoor living</h3><p>Dining areas, fire features, lighting and screening that extend the house into the garden.</p></div>
+<div><h3>Maintenance</h3><p>Seasonal care for new and established gardens, from pruning to feeding and clean-ups.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects" class="projects">
+<div class="wrap">
+<h2 class="rv">Three gardens, three ways of working</h2>
+<div class="pgrid">
+<figure class="proj p1"><img src="images/oakmere-project-meadow.jpg" alt="A mown path winding through a naturalistic meadow garden of grasses and perennials" loading="lazy"><figcaption><h3>The Meadow Walk</h3><p>A loose, layered perennial garden with a mown path that changes with each season.</p></figcaption></figure>
+<figure class="proj p2"><img src="images/oakmere-project-terrace.jpg" alt="A limestone terrace at dusk with an oak dining table and a lit fire bowl" loading="lazy"><figcaption><h3>The Dusk Terrace</h3><p>A limestone terrace for long evenings, with a fire bowl, seating wall and low lighting.</p></figcaption></figure>
+<figure class="proj p3"><img src="images/oakmere-project-courtyard.jpg" alt="A minimal courtyard with pale paving, grasses, a single tree and a timber bench" loading="lazy"><figcaption><h3>The Stone Courtyard</h3><p>A calm, contemporary courtyard built around one tree.</p></figcaption></figure>
+</div>
+<p class="note">These are fictional concept projects created for a portfolio demonstration. The images are AI-generated and do not show completed work.</p>
+</div>
+</section>
+
+<section class="why">
+<div class="wrap">
+<img class="rv" src="images/oakmere-detail-stone.jpg" alt="Close view of a hand-laid sandstone wall and steps with planting spilling over the edge" loading="lazy">
+<div>
+<h2 class="rv">Planned carefully, built to be lived in</h2>
+<dl class="rv">
+<div><dt>Design before digging</dt><dd>Every project starts with a drawn plan, so you see the garden before any ground is broken.</dd></div>
+<div><dt>Close attention to materials</dt><dd>We choose stone, timber and plants to age well, and we check levels and joints as we build.</dd></div>
+<div><dt>Clear communication</dt><dd>You get a written estimate, a schedule and one point of contact from first call to handover.</dd></div>
+<div><dt>Realistic planning</dt><dd>We talk through budget, access and seasons early, so the plan matches what can be built.</dd></div>
+</dl>
+</div>
+</div>
+</section>
+
+<section id="process" class="process">
+<div class="wrap">
+<h2 class="rv">How a project unfolds</h2>
+<ol class="steps rv">
+<li><h3>Inquiry</h3><p>Tell us about your space and what you'd like from it. We reply within a few working days.</p></li>
+<li><h3>Consultation</h3><p>We visit the site, listen, and take measurements and notes.</p></li>
+<li><h3>Estimate</h3><p>You receive a written estimate with scope, materials and a proposed timeline.</p></li>
+<li><h3>Planning</h3><p>We develop the design, agree the details with you and book the work.</p></li>
+<li><h3>Build</h3><p>Our team builds the garden, keeps you updated, and walks you through it at handover.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="cta" style="--cta:url(images/oakmere-cta-lawn.jpg)" aria-label="Start a project">
+<div class="wrap">
+<h2>Let's talk about your garden</h2>
+<p>Share a few details about your space and we'll suggest a sensible next step.</p>
+<a class="btn btn-p" href="#contact">Request an Estimate</a>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="wrap">
+<div>
+<h2 class="rv">Request an estimate</h2>
+<p class="lede rv" style="margin-top:1.2rem">The more you tell us, the more useful our first reply will be.</p>
+<address class="rv">Oakmere Landscape Studio<br>12 Placeholder Lane, Anytown<br>hello@oakmere.example<br>+00 0000 000000</address>
+</div>
+<div>
+<form id="f" novalidate>
+<div class="f"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+<div class="f"><label for="contact">Email or phone</label><input id="contact" name="contact" autocomplete="email" required><span class="err" id="e-contact"></span></div>
+<div class="f"><label for="post">Postcode or service area</label><input id="post" name="post" autocomplete="postal-code" required><span class="err" id="e-post"></span></div>
+<div class="f"><label for="svc">Service type</label><select id="svc" name="svc" required><option value="">Choose a service</option><option>Garden design</option><option>Planting</option><option>Lawn renovation</option><option>Patio or paving</option><option>Outdoor living</option><option>Maintenance</option><option>Not sure yet</option></select><span class="err" id="e-svc"></span></div>
+<div class="f"><label for="budget">Approximate budget</label><select id="budget" name="budget" required><option value="">Choose a range</option><option>Under £10,000</option><option>£10,000 to £25,000</option><option>£25,000 to £50,000</option><option>£50,000 or more</option><option>Not sure yet</option></select><span class="err" id="e-budget"></span></div>
+<div class="f"><label for="pref">Preferred contact method</label><select id="pref" name="pref" required><option value="">Choose a method</option><option>Email</option><option>Phone call</option><option>WhatsApp</option></select><span class="err" id="e-pref"></span></div>
+<div class="f w"><label for="desc">Project description</label><textarea id="desc" name="desc" required placeholder="Size of the space, what you'd like to change, any timing."></textarea><span class="err" id="e-desc"></span></div>
+<p class="fine">This is a demonstration form with no server behind it. Submitting prepares a WhatsApp message for you to review and send yourself.</p>
+<div class="f w"><button class="btn btn-p" type="submit" style="justify-self:start">Prepare my inquiry</button></div>
+</form>
+<div class="done" id="done" role="status" tabindex="-1">
+<h3>Your inquiry is ready to send</h3>
+<p>Nothing has been sent yet. Review the message below, then open WhatsApp to send it. The number is a placeholder in this demo.</p>
+<pre id="msg"></pre>
+<div class="row"><a class="btn btn-p" id="wa" target="_blank" rel="noopener">Open WhatsApp</a><button class="btn btn-g" id="copy" type="button">Copy message</button><button class="btn btn-g" id="edit" type="button">Edit details</button></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div><a class="mark" href="#top">Oak<i>mere</i></a><p style="margin-top:.8rem;max-width:34ch">A fictional landscape studio created for a portfolio demonstration.</p></div>
+<ul aria-label="Footer"><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul>
+<ul><li>hello@oakmere.example</li><li>+00 0000 000000</li><li>12 Placeholder Lane, Anytown</li></ul>
+<small>&copy; <span id="yr">2026</span> Oakmere Landscape Studio. Concept project, not a real business.</small>
+</div>
+</footer>
+
+<script>
+(function(){
+var d=document,h=d.querySelector('header'),b=d.querySelector('.burger'),n=d.getElementById('menu');
+requestAnimationFrame(function(){d.body.classList.add('loaded')});
+d.getElementById('yr').textContent=new Date().getFullYear();
+function sc(){h.classList.toggle('solid',scrollY>40||n.classList.contains('open'))}
+addEventListener('scroll',sc,{passive:true});sc();
+function menu(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');d.body.style.overflow=o?'hidden':'';sc()}
+b.onclick=function(){menu(!n.classList.contains('open'))};
+n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.15});
+d.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var links={};n.querySelectorAll('a[href^="#"]:not(.btn)').forEach(function(a){links[a.hash.slice(1)]=a});
+var so=new IntersectionObserver(function(es){es.forEach(function(e){var a=links[e.target.id];if(a&&e.isIntersecting){Object.values(links).forEach(function(x){x.classList.remove('on')});a.classList.add('on')}})},{rootMargin:'-45% 0px -50% 0px'});
+Object.keys(links).forEach(function(id){var s=d.getElementById(id);if(s)so.observe(s)});
+}else d.querySelectorAll('.rv').forEach(function(el){el.classList.add('vis')});
+
+var f=d.getElementById('f'),done=d.getElementById('done');
+var rules={name:'Enter your name.',contact:'Enter an email address or phone number.',post:'Enter your postcode or service area.',svc:'Choose a service.',budget:'Choose a budget range, or "Not sure yet".',pref:'Choose how you would like us to contact you.',desc:'Describe your project in a sentence or two.'};
+function check(k){var el=f.elements[k],v=el.value.trim(),m='';
+if(!v)m=rules[k];
+else if(k==='contact'&&!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)||v.replace(/\D/g,'').length>=7))m='Enter a valid email address or a phone number with at least 7 digits.';
+else if(k==='desc'&&v.length<15)m='Add a little more detail (at least 15 characters).';
+d.getElementById('e-'+k).textContent=m;el.setAttribute('aria-invalid',m?'true':'false');
+if(m)el.setAttribute('aria-describedby','e-'+k);return !m}
+Object.keys(rules).forEach(function(k){f.elements[k].addEventListener('blur',function(){check(k)});f.elements[k].addEventListener('input',function(){if(f.elements[k].getAttribute('aria-invalid')==='true')check(k)})});
+f.addEventListener('submit',function(e){e.preventDefault();var bad=Object.keys(rules).filter(function(k){return !check(k)});
+if(bad.length){f.elements[bad[0]].focus();return}
+var v=function(k){return f.elements[k].value.trim()};
+var t='Hello Oakmere, I would like an estimate.\n\nName: '+v('name')+'\nContact: '+v('contact')+' (prefer '+v('pref')+')\nLocation: '+v('post')+'\nService: '+v('svc')+'\nBudget: '+v('budget')+'\n\nProject: '+v('desc');
+d.getElementById('msg').textContent=t;
+d.getElementById('wa').href='https://wa.me/10000000000?text='+encodeURIComponent(t);
+f.style.display='none';done.classList.add('show');done.focus()});
+d.getElementById('edit').onclick=function(){done.classList.remove('show');f.style.display='';f.elements.name.focus()};
+d.getElementById('copy').onclick=function(){var el=this,t=d.getElementById('msg').textContent;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){el.textContent='Copied'},function(){el.textContent='Select and copy the text above'});setTimeout(function(){el.textContent='Copy message'},2200)};
+})();
+</script>
+</body>
+</html>
